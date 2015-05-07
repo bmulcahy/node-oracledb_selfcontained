@@ -1,0 +1,66 @@
+{
+  "name": "oracledb",
+  "version": "0.4.2",
+  "description": "Oracle Database driver by Oracle Corp.",
+  "license": "Apache 2.0",
+  "homepage": "http://www.oracle.com/technetwork/database/database-technologies/node_js/index.html",
+  "keywords": [
+    "Oracle",
+    "Database",
+    "official",
+    "oracledb",
+    "nodejs",
+    "db",
+    "binding",
+    "extension",
+    "module",
+    "driver",
+    "library",
+    "plugin",
+    "client",
+    "oci"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/oracle/node-oracledb.git"
+  },
+  "dependencies": {},
+  "engines": {
+    "node": ">=0.10.28 <0.11"
+  },
+  "engineStrict": true,
+  "maintainers": [
+    {
+      "name": "cjbj",
+      "email": "christopher.jones@oracle.com"
+    },
+    {
+      "name": "slari",
+      "email": "shoaib.lari@oracle.com"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/oracle/node-oracledb/issues"
+  },
+  "main": "./index.js",
+  "scripts": {
+    "install": "node-gyp rebuild"
+  },
+  "gypfile": true,
+  "_id": "oracledb@0.4.2",
+  "_shasum": "f0f6e0143c06b5ba40f9e30052c25abe0dff9aca",
+  "_resolved": "https://registry.npmjs.org/oracledb/-/oracledb-0.4.2.tgz",
+  "_from": "oracledb@",
+  "_npmVersion": "2.7.1",
+  "_nodeVersion": "0.10.37",
+  "_npmUser": {
+    "name": "cjbj",
+    "email": "christopher.jones@oracle.com"
+  },
+  "dist": {
+    "shasum": "f0f6e0143c06b5ba40f9e30052c25abe0dff9aca",
+    "tarball": "http://registry.npmjs.org/oracledb/-/oracledb-0.4.2.tgz"
+  },
+  "directories": {},
+  "readme": "ERROR: No README data found!"
+}
