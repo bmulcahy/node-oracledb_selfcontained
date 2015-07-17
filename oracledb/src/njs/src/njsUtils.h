@@ -15,6 +15,31 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
+ * This file uses NAN:
+ *
+ * Copyright (c) 2015 NAN contributors
+ * 
+ * NAN contributors listed at https://github.com/rvagg/nan#contributors
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining
+ * a copy of this software and associated documentation files (the
+ * "Software"), to deal in the Software without restriction, including
+ * without limitation the rights to use, copy, modify, merge, publish,
+ * distribute, sublicense, and/or sell copies of the Software, and to
+ * permit persons to whom the Software is furnished to do so, subject to
+ * the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be
+ * included in all copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+ * LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+ * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+ * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. 
+ * 
  * NAME
  *   njsUtils.h
  *
@@ -25,6 +50,10 @@
 
 #ifndef __NJSUTILS_H__
 #define __NJSUTILS_H__
+
+#include <node.h>
+
+#include "nan.h"
 
 #include "njsMessages.h"
 
@@ -75,7 +104,7 @@ typedef enum
   {                                                                           \
     msg = NJSMessages::getErrorMsg ( errMissingCallback );                    \
     NJS_SET_EXCEPTION( msg.c_str(), msg.length() );		              \
-    return Undefined();                                                       \
+    NanReturnUndefined();                                                       \
   }                                                                           \
   else                                                                        \
   {                                                                           \
@@ -89,7 +118,7 @@ typedef enum
  * for the exception to be thrown.
  */
 #define NJS_SET_EXCEPTION( str, len )                                         \
-  ThrowException(v8::Exception::Error(String::New( str, (int) len )));
+  NanThrowError(str);
 
 /*
  * If arguments are not in given range, set the error.
@@ -157,7 +186,7 @@ typedef enum
  */
 #define NJS_GET_STRING_FROM_JSON( val, err, obj, key, index, exitCode )       \
 {                                                                             \
-  Local<Value> v8value = obj->Get(String::New(key));                          \
+  Local<Value> v8value = obj->Get(NanNew<v8::String>(key));                          \
   err.clear();                                                                \
   if( v8value->IsString() )                                                   \
   {                                                                           \
@@ -182,7 +211,7 @@ typedef enum
  */
 #define NJS_GET_UINT_FROM_JSON( val, err, obj, key, index, exitCode )         \
 {                                                                             \
-  Local<Value> v8value = obj->Get(String::New(key));                          \
+  Local<Value> v8value = obj->Get(NanNew<v8::String>(key));                          \
   err.clear();                                                                \
   if( v8value->IsUint32() )                                                   \
   {                                                                           \
@@ -212,7 +241,7 @@ typedef enum
  */
 #define NJS_GET_BOOL_FROM_JSON( val, err, obj, key, index, exitCode )         \
 {                                                                             \
-  Local<Value> v8value = obj->Get(String::New(key));                          \
+  Local<Value> v8value = obj->Get(NanNew<v8::String>(key));                          \
   if ( !v8value->IsUndefined () )                                             \
   {                                                                           \
     val = v8value->ToBoolean()->Value();                                      \
@@ -233,7 +262,7 @@ typedef enum
   }                                                                           \
   else                                                                        \
   {                                                                           \
-    msg = NJSMessages::getErrorMsg ( errInvalidParameterType,                 \
+    msg = NJSMessages::getErrorMsg ( errInvalidPropertyValue,                 \
                                      prop );                                  \
     NJS_SET_EXCEPTION( msg.c_str(), msg.length() );                           \
   }                                                                           \
@@ -253,7 +282,7 @@ typedef enum
   }                                                                           \
   else                                                                        \
   {                                                                           \
-    msg = NJSMessages::getErrorMsg ( errInvalidParameterType,                 \
+    msg = NJSMessages::getErrorMsg ( errInvalidPropertyValue,                 \
                                      prop );                                  \
     NJS_SET_EXCEPTION( msg.c_str(), msg.length() );		              \
   }                                                                           \

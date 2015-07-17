@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|x64">
       <Configuration>Debug</Configuration>
@@ -11,23 +11,23 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{EA5D269A-A842-3072-2A13-CE6D3853A756}</ProjectGuid>
+    <ProjectGuid>{D3DB3508-1518-D0A3-6633-B2D4F06E2F9C}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>oracledb</RootNamespace>
   </PropertyGroup>
-  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props"/>
   <PropertyGroup Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
   </PropertyGroup>
   <PropertyGroup Label="Locals">
-    <PlatformToolset>Windows7.1SDK</PlatformToolset>
+    <PlatformToolset>v120_xp</PlatformToolset>
   </PropertyGroup>
-  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
-  <ImportGroup Label="ExtensionSettings" />
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props"/>
+  <ImportGroup Label="ExtensionSettings"/>
   <ImportGroup Label="PropertySheets">
-    <Import Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" />
+    <Import Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props"/>
   </ImportGroup>
-  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Label="UserMacros"/>
   <PropertyGroup>
     <ExecutablePath>$(ExecutablePath);$(MSBuildProjectDirectory)\..\bin\;$(MSBuildProjectDirectory)\..\bin\</ExecutablePath>
     <IgnoreImportLibrary>true</IgnoreImportLibrary>
@@ -42,10 +42,9 @@
     <TargetName>$(ProjectName)</TargetName>
     <TargetPath>$(OutDir)\$(ProjectName).node</TargetPath>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\bmulcahy\.node-gyp\0.10.38\src;C:\Users\bmulcahy\.node-gyp\0.10.38\deps\uv\include;C:\Users\bmulcahy\.node-gyp\0.10.38\deps\v8\include;..\src\instantclient\sdk\include;..\src\dpi\src;..\src\dpi\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\bmulcahy\.node-gyp\0.10.38\src;C:\Users\bmulcahy\.node-gyp\0.10.38\deps\uv\include;C:\Users\bmulcahy\.node-gyp\0.10.38\deps\v8\include;C:\oracle\instantclient\sdk\include;..\src\dpi\src;..\src\dpi\include;..\node_modules\nan;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <BufferSecurityCheck>true</BufferSecurityCheck>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -55,14 +54,14 @@
       <OmitFramePointers>false</OmitFramePointers>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;BUILDING_V8_SHARED=1;BUILDING_UV_SHARED=1;BUILDING_NODE_EXTENSION;DEBUG;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <StringPooling>true</StringPooling>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <TreatWarningAsError>false</TreatWarningAsError>
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;DelayImp.lib;"C:\Users\bmulcahy\.node-gyp\0.10.38\$(Configuration)\node.lib";C:\oracle\instantclient\sdk\lib\msvc\oci.lib</AdditionalDependencies>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;DelayImp.lib;&quot;C:\Users\bmulcahy\.node-gyp\0.10.38\$(Configuration)\node.lib&quot;;oci.lib</AdditionalDependencies>
       <AllowIsolation>true</AllowIsolation>
       <DataExecutionPrevention>true</DataExecutionPrevention>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -73,14 +72,14 @@
       <TargetMachine>MachineX64</TargetMachine>
     </Link>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>C:\Users\bmulcahy\.node-gyp\0.10.38\src;C:\Users\bmulcahy\.node-gyp\0.10.38\deps\uv\include;C:\Users\bmulcahy\.node-gyp\0.10.38\deps\v8\include;C:\oracle\instantclient\sdk\include;..\src\dpi\src;..\src\dpi\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\bmulcahy\.node-gyp\0.10.38\src;C:\Users\bmulcahy\.node-gyp\0.10.38\deps\uv\include;C:\Users\bmulcahy\.node-gyp\0.10.38\deps\v8\include;C:\oracle\instantclient\sdk\include;..\src\dpi\src;..\src\dpi\include;..\node_modules\nan;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;BUILDING_V8_SHARED=1;BUILDING_UV_SHARED=1;BUILDING_NODE_EXTENSION;DEBUG;_DEBUG;%(PreprocessorDefinitions);%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\bmulcahy\.node-gyp\0.10.38\src;C:\Users\bmulcahy\.node-gyp\0.10.38\deps\uv\include;C:\Users\bmulcahy\.node-gyp\0.10.38\deps\v8\include;..\src\instantclient\sdk\include;..\src\dpi\src;..\src\dpi\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalOptions>/MP %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>C:\Users\bmulcahy\.node-gyp\0.10.38\src;C:\Users\bmulcahy\.node-gyp\0.10.38\deps\uv\include;C:\Users\bmulcahy\.node-gyp\0.10.38\deps\v8\include;C:\oracle\instantclient\sdk\include;..\src\dpi\src;..\src\dpi\include;..\node_modules\nan;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>/MP /EHsc %(AdditionalOptions)</AdditionalOptions>
       <BufferSecurityCheck>true</BufferSecurityCheck>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <DisableSpecificWarnings>4251;%(DisableSpecificWarnings)</DisableSpecificWarnings>
@@ -91,8 +90,8 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <OmitFramePointers>true</OmitFramePointers>
       <Optimization>Full</Optimization>
-      <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;BUILDING_V8_SHARED=1;BUILDING_UV_SHARED=1;BUILDING_NODE_EXTENSION;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PreprocessorDefinitions>WIN32_LEAN_AND_MEAN;WIN32;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;BUILDING_V8_SHARED=1;BUILDING_UV_SHARED=1;BUILDING_NODE_EXTENSION;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <RuntimeTypeInfo>false</RuntimeTypeInfo>
       <StringPooling>true</StringPooling>
       <SuppressStartupBanner>true</SuppressStartupBanner>
@@ -104,7 +103,8 @@
       <AdditionalOptions>/LTCG %(AdditionalOptions)</AdditionalOptions>
     </Lib>
     <Link>
-      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;DelayImp.lib;"C:\Users\bmulcahy\.node-gyp\0.10.38\$(Configuration)\node.lib";C:\oracle\instantclient\sdk\lib\msvc\oci.lib</AdditionalDependencies>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;DelayImp.lib;&quot;C:\Users\bmulcahy\.node-gyp\0.10.38\$(Configuration)\node.lib&quot;;oci.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\oracle\instantclient\sdk\lib\msvc;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AllowIsolation>true</AllowIsolation>
       <DataExecutionPrevention>true</DataExecutionPrevention>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -118,28 +118,28 @@
       <TargetMachine>MachineX64</TargetMachine>
     </Link>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>C:\Users\bmulcahy\.node-gyp\0.10.38\src;C:\Users\bmulcahy\.node-gyp\0.10.38\deps\uv\include;C:\Users\bmulcahy\.node-gyp\0.10.38\deps\v8\include;C:\oracle\instantclient\sdk\include;..\src\dpi\src;..\src\dpi\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;BUILDING_V8_SHARED=1;BUILDING_UV_SHARED=1;BUILDING_NODE_EXTENSION;%(PreprocessorDefinitions);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\bmulcahy\.node-gyp\0.10.38\src;C:\Users\bmulcahy\.node-gyp\0.10.38\deps\uv\include;C:\Users\bmulcahy\.node-gyp\0.10.38\deps\v8\include;C:\oracle\instantclient\sdk\include;..\src\dpi\src;..\src\dpi\include;..\node_modules\nan;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;BUILDING_V8_SHARED=1;BUILDING_UV_SHARED=1;BUILDING_NODE_EXTENSION;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <None Include="..\binding.gyp" />
+    <None Include="..\binding.gyp"/>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\src\njs\src\njsOracle.cpp" />
-    <ClCompile Include="..\src\njs\src\njsPool.cpp" />
-    <ClCompile Include="..\src\njs\src\njsConnection.cpp" />
-    <ClCompile Include="..\src\njs\src\njsMessages.cpp" />
-    <ClCompile Include="..\src\dpi\src\dpiEnv.cpp" />
-    <ClCompile Include="..\src\dpi\src\dpiEnvImpl.cpp" />
-    <ClCompile Include="..\src\dpi\src\dpiException.cpp" />
-    <ClCompile Include="..\src\dpi\src\dpiExceptionImpl.cpp" />
-    <ClCompile Include="..\src\dpi\src\dpiConnImpl.cpp" />
-    <ClCompile Include="..\src\dpi\src\dpiDateTimeArrayImpl.cpp" />
-    <ClCompile Include="..\src\dpi\src\dpiPoolImpl.cpp" />
-    <ClCompile Include="..\src\dpi\src\dpiStmtImpl.cpp" />
-    <ClCompile Include="..\src\dpi\src\dpiUtils.cpp" />
+    <ClCompile Include="..\src\njs\src\njsOracle.cpp"/>
+    <ClCompile Include="..\src\njs\src\njsPool.cpp"/>
+    <ClCompile Include="..\src\njs\src\njsConnection.cpp"/>
+    <ClCompile Include="..\src\njs\src\njsMessages.cpp"/>
+    <ClCompile Include="..\src\dpi\src\dpiEnv.cpp"/>
+    <ClCompile Include="..\src\dpi\src\dpiEnvImpl.cpp"/>
+    <ClCompile Include="..\src\dpi\src\dpiException.cpp"/>
+    <ClCompile Include="..\src\dpi\src\dpiExceptionImpl.cpp"/>
+    <ClCompile Include="..\src\dpi\src\dpiConnImpl.cpp"/>
+    <ClCompile Include="..\src\dpi\src\dpiDateTimeArrayImpl.cpp"/>
+    <ClCompile Include="..\src\dpi\src\dpiPoolImpl.cpp"/>
+    <ClCompile Include="..\src\dpi\src\dpiStmtImpl.cpp"/>
+    <ClCompile Include="..\src\dpi\src\dpiUtils.cpp"/>
   </ItemGroup>
-  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
-  <ImportGroup Label="ExtensionTargets" />
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets"/>
+  <ImportGroup Label="ExtensionTargets"/>
 </Project>
