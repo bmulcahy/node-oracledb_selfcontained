@@ -2,9 +2,9 @@
 Oracle built to be deployed on server
 
 ####Tested with
-Node Version : 0.12.9
-NPM Version : 3.5.3
-oracledb Version: 1.0.0
+  Node Version : 0.12.9   
+  NPM Version : 3.5.3   
+  oracledb Version: 1.0.0   
 
 
 
